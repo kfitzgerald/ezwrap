@@ -32,11 +32,11 @@ exports.clean = async function clean() {
 
 // Initialize the browserify instance
 const appBrowserify = Browserify({
-    debug: true,
-    entries,
+    debug: true
 });
 
 appBrowserify.external('util');
+appBrowserify.require('./EZWrap.js', { expose: 'ezwrap' });
 
 
 // Convert our fancy syntax for use in old stuff
