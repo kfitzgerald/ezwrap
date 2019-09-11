@@ -1,0 +1,58 @@
+{
+  "name": "ezwrap",
+  "version": "1.0.0",
+  "description": "Easily wrap parsed XML objects for reliable access",
+  "main": "EZWrap.js",
+  "scripts": {
+    "clean": "node_modules/.bin/gulp clean && rm -rf .nyc_output coverage",
+    "build": "node_modules/.bin/gulp build",
+    "test": "npm run build && node_modules/.bin/mocha -R spec test",
+    "cover": "node_modules/.bin/nyc node_modules/mocha/bin/_mocha --exit",
+    "lint": "node_modules/.bin/eslint .",
+    "report": "npm run build && npm run cover && npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kfitzgerald/ezwrap.git"
+  },
+  "keywords": [
+    "Needle",
+    "XML"
+  ],
+  "author": "Kevin Fitzgerald",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "add": "^2.0.6",
+    "babel-eslint": "^10.0.3",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
+    "core-js": "^3.2.1",
+    "del": "^5.1.0",
+    "eslint": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "should": "^13.2.3",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "nyc": {
+    "reporter": [
+      "text-summary",
+      "html",
+      "lcovonly"
+    ]
+  }
+}
