@@ -1,6 +1,6 @@
 # EZWrap
 
-[![Build Status](https://travis-ci.org/kfitzgerald/ezwrap.svg?branch=master)](https://travis-ci.org/kfitzgerald/ezwrap) [![Coverage Status](https://coveralls.io/repos/github/kfitzgerald/ezwrap/badge.svg?branch=master)](https://coveralls.io/github/kfitzgerald/ezwrap?branch=master)
+[![Node.js CI](https://github.com/kfitzgerald/ezwrap/actions/workflows/node.js.yml/badge.svg)](https://github.com/kfitzgerald/ezwrap/actions/workflows/node.js.yml) [![Coverage Status](https://coveralls.io/repos/github/kfitzgerald/ezwrap/badge.svg?branch=master)](https://coveralls.io/github/kfitzgerald/ezwrap?branch=master)
 
 This module makes dealing with parsed XML objects easy and painless. Uses [Needle's](https://github.com/tomas/needle) XML formatted objects.
  
