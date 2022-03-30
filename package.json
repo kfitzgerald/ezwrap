@@ -1,6 +1,6 @@
 {
   "name": "ezwrap",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Easily wrap parsed XML objects for reliable access",
   "main": "EZWrap.js",
   "scripts": {
@@ -22,37 +22,89 @@
   "author": "Kevin Fitzgerald",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/polyfill": "^7.6.0",
-    "@babel/preset-env": "^7.6.0",
+    "@babel/core": "^7.17.8",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.16.11",
     "add": "^2.0.6",
-    "babel-eslint": "^10.0.3",
+    "babel-eslint": "^10.1.0",
     "babelify": "^10.0.0",
-    "browserify": "^16.5.0",
-    "core-js": "^3.2.1",
-    "del": "^5.1.0",
-    "eslint": "^6.3.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-standard": "^4.0.1",
+    "browserify": "^17.0.0",
+    "core-js": "^3.21.1",
+    "del": "^6.0.0",
+    "eslint": "^8.12.0",
+    "eslint-config-standard": "^17.0.0-1",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-node": "^11.1.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sourcemaps": "^2.6.5",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "mocha": "^6.2.0",
-    "nyc": "^14.1.1",
+    "mocha": "^9.2.2",
+    "nyc": "^15.1.0",
     "should": "^13.2.3",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
+  },
+  "mocha": {
+    "require": ["should"],
+    "reporter": "spec",
+    "checkLeaks": false,
+    "recursive": true
   },
   "nyc": {
     "reporter": [
       "text-summary",
       "html",
       "lcovonly"
+    ]
+  },
+  "eslintConfig": {
+    "ignorePatterns": [
+      "/node_modules/**",
+      "/.nyc_output/**",
+      "/coverage/**",
+      "/dist/**"
+    ],
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 8,
+      "sourceType": "module",
+      "ecmaFeatures": {
+      }
+    },
+    "plugins": [
+    ],
+    "extends": "eslint:recommended",
+    "globals": {
+      "require": true,
+      "module": true,
+      "describe": true,
+      "it": true,
+      "before": true,
+      "beforeEach": true,
+      "after": true,
+      "afterEach": true,
+      "Promise": true,
+      "window": true
+    }
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "entry",
+          "corejs": "3.0.0"
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
     ]
   }
 }

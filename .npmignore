@@ -1,0 +1,10 @@
+test
+examples
+.idea
+*.tgz
+.travis.yml
+coverage
+.nyc_output
+docs
+.eslint*
+.github
